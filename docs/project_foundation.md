@@ -5,11 +5,17 @@
 ## Fictional Organization
 
 **Company:** Meridian Workforce Solutions
+
 **Industry:** Business services and technology-enabled operations
+
 **Employees:** Approximately 3,600
+
 **Locations:** Multiple U.S. offices plus remote employees
+
 **Survey cadence:** Two survey waves conducted six months apart
+
 **Work arrangements:** On-site, hybrid, and remote
+
 **Minimum reporting threshold:** 10 usable survey responses
 
 ## Organizational Structure
