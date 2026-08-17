@@ -1,6 +1,6 @@
 # ============================================================
 # Employee Listening and Organizational Health Analytics
-# Script: 01_generate_population.R
+# Script: 01_generate_employee_population.R
 # Purpose: Generate the synthetic employee population used
 #           for survey participation and employee-experience analysis.
 # ============================================================
@@ -74,7 +74,9 @@ sum(department_spec$target_headcount)
 
 #department headcount must always equal the total employee 
 #           population specified above
-stopifnot(sum(department_spec$target_headcount) == n_employees)
+stopifnot(
+    "There is a mismatch between the department headcount and the number of employees." = 
+    sum(department_spec$target_headcount) == n_employees)
 
 # 6. Create base employee population -------------------------------------
 
@@ -91,9 +93,16 @@ employee_population = department_spec %>%
 # 7. Validate base populations
 
 stopifnot(
+    "Total number of employees must be 3600." = 
     nrow(employee_population) == n_employees, # exactly 3600 rows exist
+    
+    "Some employees have been assigned the same employee_id." = 
     n_distinct(employee_population$employee_id) == n_employees, # all 3600 employee IDs are unique
+    
+    "Some employees have not been assigned to a business unit." = 
     !any(is.na(employee_population$business_unit)), # no employee is missing a business unit
+    
+    "Some employees have not been assigned to a department." = 
     !any(is.na(employee_population$department)) # no employee is missing a department
 )
 
@@ -177,12 +186,25 @@ employee_population = employee_population %>%
 # 13. Validate tenure -------------------------------------
 
 stopifnot(
+    "Some employees have not been assigned a hire date." = 
     !any(is.na(employee_population$hire_date)),
+    
+    "Some employees do not have their tenure years calculated and/or assigned." = 
     !any(is.na(employee_population$tenure_years)),
+    
+    "Some employees have not been assigned their tenure group." = 
     !any(is.na(employee_population$tenure_group)),
+    
+    "Some employees have been assigned a hire date after Wave 1." = 
     all(employee_population$hire_date <= wave_1_date),
+    
+    "Some employees have been assigned a hire date before the min_hire_date." = 
     all(employee_population$hire_date >= min_hire_date),
+    
+    "Some employees have been assigned negative tenure years." = 
     all(employee_population$tenure_years >= 0),
+    
+    "Some employees have been assigned an invalid tenure group." = 
     all(employee_population$tenure_group %in% tenure_groups)
 )
 
@@ -293,8 +315,13 @@ employee_population = employee_population %>%
 # 18. Validate job levels -------------------------------------
 
 stopifnot(
+    "Some employees have not been assigned a job_level_group i.e. corporate, tech_product, etc." = 
     !any(is.na(employee_population$job_level_group)), # each employee must have a job_level_group (corporate, tech_product, etc)
+    
+    "Some employees have not been assigned a job_level." = 
     !any(is.na(employee_population$job_level)), # each employee must have a job_level assigned (entry level, professional, etc.)
+    
+    "Some employees have been assigned an invalid job_level." = 
     all(employee_population$job_level %in% job_levels) # each employee job_level must exist in the defined job_levels
 )
 
@@ -331,12 +358,17 @@ employee_population = employee_population %>%
 # 21. Validate manager status -------------------------------------
 
 stopifnot(
+    "Some employees have not been assigned a manager_status." = 
     !any(is.na(employee_population$manager_status)),
+    
+    "Some employees are assigned a manager status outside of the defined Individual Contributor and People Manager roles." = 
     all(
         # only IC & PM are assignable manager_statuses
         employee_population$manager_status %in%
             c("Individual Contributor", "People Manager")
     ),
+    
+    "Some Entry Level employees are incorrectly assigned People Manager roles." = 
     !any( # entry level cannot be people manager
         employee_population$job_level == "Entry Level" & 
             employee_population$manager_status == "People Manager"
@@ -380,8 +412,11 @@ employee_population = employee_population %>%
 
 # 24. Validate work arrangement -------------------------------------
 
-stopifnot(
+stopifnot( 
+    "Some employees have not been assigned a work arrangement." = 
     !any(is.na(employee_population$work_arrangement)),
+    
+    "Some employees have been assigned invalid work arrangements." = 
     all(
         employee_population$work_arrangement %in%
             work_arrangements
@@ -391,6 +426,7 @@ stopifnot(
 # check to make sure each department has a probability vector
 
 stopifnot(
+    "Some departments have not been assigned a work arrangement probability vector." = 
     all(
         unique(employee_population$department) %in%
             names(work_arrangement_probs)
@@ -428,7 +464,10 @@ employee_population = employee_population %>%
 # 27. Validate location region -------------------------------------
 
 stopifnot(
+    "Some employees have not been assigned a location_region." = 
     !any(is.na(employee_population$location_region)),
+    
+    "Some employees have been assigned an invalid location_region." = 
     all(
         employee_population$location_region %in%
             location_regions
@@ -454,17 +493,40 @@ employee_population = employee_population %>%
 # 29. Validate the final employee population --------------------------
 
 stopifnot(
+    "The employee population should contain exactly 3600 employees." = 
     nrow(employee_population) == 3600,
+    
+    "Some employees have been assigned the same employee_id." = 
     n_distinct(employee_population$employee_id) == 3600,
+    
+    "Some employees have not been assigned an employee_id." = 
     !anyNA(employee_population$employee_id),
+    
+    "Some employees have not been assigned a business unit." = 
     !anyNA(employee_population$business_unit),
+    
+    "Some employees have not been assigned their department." = 
     !anyNA(employee_population$department),
+    
+    "Some employees have not been assigned their job-level." = 
     !anyNA(employee_population$job_level),
+    
+    "Some employees have not been assigned a manager status." = 
     !anyNA(employee_population$manager_status),
+    
+    "Some employees have not been assigned a work arrangement." = 
     !anyNA(employee_population$work_arrangement),
+    
+    "Some employees have not been assigned their location_region." = 
     !anyNA(employee_population$location_region),
+    
+    "Some employees have not been assigned a hire date." = 
     !anyNA(employee_population$hire_date),
+    
+    "Some employees have not been assigned tenure years." = 
     !anyNA(employee_population$tenure_years),
+    
+    "Some employees have not been assigned their tenure group." = 
     !anyNA(employee_population$tenure_group)
 )
 
