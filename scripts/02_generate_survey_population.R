@@ -267,3 +267,7 @@ stopifnot(
   "Some response probabilities are below 0.05 or above 0.95." = 
   all(survey_population$response_probability >= 0.05 & survey_population$response_probability <= 0.95)
 )
+
+# 18. Save survey population ----------------------------------
+
+writexl::write_xlsx(survey_population, "data/processed/survey_population.xlsx")
