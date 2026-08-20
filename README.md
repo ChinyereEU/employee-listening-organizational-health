@@ -123,6 +123,7 @@ Additional folders and files will be added as the project develops.
 - [Project Foundation](docs/project_foundation.md)
 - [Survey Constructs and Outcomes](docs/survey_constructs.md)
 - [Reporting and Privacy Rules](docs/reporting_privacy_rules.md)
+- [Synthetic Data Generation Assumptions](docs/synthetic_data_generation.md)
 
 ## Planned Deliverables
 
