@@ -61,6 +61,44 @@ Each employee-experience construct will generate four observed survey items.
 
 The observed items will be imperfect indicators of their underlying latent construct. Item responses will therefore include measurement error and will not be identical within a construct.
 
+## Item Loading Assumptions
+
+Observed survey items will be generated as imperfect indicators of their underlying latent construct.
+
+The initial simulation will use item loadings ranging from approximately 0.67 to 0.75 across the employee-experience items.
+Intent-to stay will use loadings of 0.75 and 0.70 respectively.
+
+These loadings are simulation parameters used to create correlated but non-identical survey items. They are not empirical estimates of measurement validity.
+
+| Construct | Item | Loading |
+|---|---|---:|
+| Engagement | `eng_01` | 0.75 |
+| Engagement | `eng_02` | 0.70 |
+| Engagement | `eng_03` | 0.72 |
+| Engagement | `eng_04` | 0.68 |
+| Manager effectiveness | `mgr_01` | 0.75 |
+| Manager effectiveness | `mgr_02` | 0.72 |
+| Manager effectiveness | `mgr_03` | 0.70 |
+| Manager effectiveness | `mgr_04` | 0.68 |
+| Psychological safety | `psy_01` | 0.74 |
+| Psychological safety | `psy_02` | 0.70 |
+| Psychological safety | `psy_03` | 0.72 |
+| Psychological safety | `psy_04` | 0.68 |
+| Growth and development | `grw_01` | 0.75 |
+| Growth and development | `grw_02` | 0.69 |
+| Growth and development | `grw_03` | 0.71 |
+| Growth and development | `grw_04` | 0.73 |
+| Workload sustainability | `wrk_01` | 0.73 |
+| Workload sustainability | `wrk_02` | 0.70 |
+| Workload sustainability | `wrk_03` | 0.67 |
+| Workload sustainability | `wrk_04` | 0.71 |
+| Belonging | `blg_01` | 0.74 |
+| Belonging | `blg_02` | 0.72 |
+| Belonging | `blg_03` | 0.69 |
+| Belonging | `blg_04` | 0.71 |
+| Intent to stay | `its_01` | 0.75 |
+| Intent to stay | `its_02` | 0.70 |
+
 The item structure follows the survey instrument:
 
 - Engagement: `eng_01`–`eng_04`
