@@ -19,7 +19,7 @@ The simulation will generate six correlated latent employee-experience construct
 - Workload sustainability
 - Belonging
 
-Each construct will serve as the underlying dimension for four observed survey items defined in the [Survey Instrument](docs/survey_instrument.md).
+Each construct will serve as the underlying dimension for four observed survey items defined in the [`survey_instrument.md`](survey_instrument.md).
 
 ## Correlation Structure
 
