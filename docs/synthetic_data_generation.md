@@ -136,6 +136,14 @@ The initial simulation assumption is approximately 3% missingness at the item le
 
 Missingness will be evaluated during the subsequent data-quality analysis rather than automatically treated as evidence of a particular real-world missing-data mechanism.
 
+## Open-Ended Comment Response
+
+The open-ended comment question is optional. The synthetic data generation process assumes that approximately 75% of survey respondents provide a comment.
+
+This response rate is a simulation parameter and does not represent an empirical estimate of employee willingness to provide open-ended feedback.
+
+Missing open-ended comments will not cause a survey response to be classified as unusable for the quantitative analysis. The comment field will be treated separately from the Likert-scale survey items.
+
 ## Survey-Wave Differences
 
 The two survey waves will be generated from related but not identical distributions.
