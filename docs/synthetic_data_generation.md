@@ -98,6 +98,7 @@ These loadings are simulation parameters used to create correlated but non-ident
 | Belonging | `blg_04` | 0.71 |
 | Intent to stay | `its_01` | 0.75 |
 | Intent to stay | `its_02` | 0.70 |
+| Overall employee experience | `ovl_01` | 0.75 |
 
 The item structure follows the survey instrument:
 
