@@ -55,6 +55,21 @@ These values are simulation assumptions and will not be presented as empirical f
 
 The subsequent analysis will determine which associations are recovered from the simulated sample and how strongly they appear after accounting for other dimensions.
 
+### Intent-to-Stay Composite
+
+Intent to stay is measured using two survey items:
+
+- `its_01`: Expected continued employment
+- `its_02`: Preference to remain
+
+The analytical `intent_to_stay` score is calculated as the arithmetic mean of `its_01` and `its_02`.
+
+Both items must have valid responses for the composite score to be calculated. If either item is missing, `intent_to_stay` is recorded as missing.
+
+Both items are retained as the intended indicators of the construct. Because this is a two-item measure, the resulting composite will be evaluated using its inter-item correlation and reliability during the validation stage.
+
+The composite is treated as an analytical outcome measure and does not imply that intent to stay is a causal consequence of any employee-experience dimension.
+
 ## Item Generation
 
 Each employee-experience construct will generate four observed survey items.
@@ -66,7 +81,7 @@ The observed items will be imperfect indicators of their underlying latent const
 Observed survey items will be generated as imperfect indicators of their underlying latent construct.
 
 The initial simulation will use item loadings ranging from approximately 0.67 to 0.75 across the employee-experience items.
-Intent-to stay will use loadings of 0.75 and 0.70 respectively.
+Intent-to-stay will use loadings of 0.75 and 0.70 respectively.
 
 These loadings are simulation parameters used to create correlated but non-identical survey items. They are not empirical estimates of measurement validity.
 
@@ -109,6 +124,7 @@ The item structure follows the survey instrument:
 - Workload sustainability: `wrk_01`–`wrk_04`
 - Belonging: `blg_01`–`blg_04`
 - Intent to stay: `its_01`–`its_02`
+- Overall employee experience: `ovl_01`
 
 ## Likert Response Generation
 
