@@ -439,7 +439,45 @@ final_model_summary = tibble(
 
 final_model_summary
 
-# 20. Final Script 06 validation ---------------------------------
+# 20. Save final model results ------------------------------------
+
+write_csv(
+  final_model_coefficients_ci,
+  "outputs/final_model_coefficients_raw.csv"
+)
+
+write_csv(
+  final_model_summary,
+  "outputs/final_model_summary.csv"
+)
+
+stopifnot(
+  "Final model coefficients were not saved." =
+    file.exists(
+      "outputs/final_model_coefficients.csv"
+    ),
+  
+  "Final model summary was not saved." =
+    file.exists(
+      "outputs/final_model_summary.csv"
+    )
+)
+
+# Save final test-set predictions --------------------------------
+
+final_test_predictions = testing_data %>%
+  select(
+    employee_id,
+    intent_to_stay,
+    final_predicted_intent_to_stay
+  )
+
+write_csv(
+  final_test_predictions,
+  "outputs/final_test_predictions.csv"
+)
+
+# 21. Final Script 06 validation ---------------------------------
 
 stopifnot(
   "Final model is missing." =
@@ -470,7 +508,7 @@ stopifnot(
     ] >= 0
 )
 
-# 21. Script 06 completion note -----------------------------------
+# 22. Script 06 completion note -----------------------------------
 # 
 # Script 06 developed and evaluated a predicitve model of
 # employee intent to stay.
