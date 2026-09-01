@@ -655,6 +655,20 @@ intent_model_standardized = lm(
 
 summary(intent_model_standardized)
 
+# 23a. Save standardized model coefficients ----------------------
+
+standardized_model_coefficients = broom::tidy(
+  intent_model_standardized
+) %>%
+  filter(
+    term != "(Intercept)"
+  )
+
+write_csv(
+  standardized_model_coefficients,
+  "outputs/standardized_model_coefficients.csv"
+)
+
 # 24. Multicollinearity diagnostics -------------------------------
 # Because the six predictors are correlated with one another, we must
 # check whether they are sufficiently distinct for the regression 
