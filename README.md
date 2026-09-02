@@ -1,156 +1,143 @@
 # Employee Listening and Organizational Health Analytics
 
-A synthetic employee survey analytics project examining organizational health, survey participation, experience differences, and associations with intent to stay.
+A synthetic employee-listening analytics project examining employee experience, organizational differences, survey measurement quality, and associations with intent to stay.
 
 ## Project Status
 
-**In development**
+**Complete**
 
-This repository currently contains the project foundation, employee-experience framework, and reporting and privacy rules. Data generation, statistical analysis, and dashboard development will be added as the project progresses.
+This project demonstrates an end-to-end employee-listening and organizational-health analytics workflow, from synthetic data generation and survey validation through organizational analysis, predictive modeling, privacy-conscious reporting, and stakeholder communication.
 
 ## Project Overview
 
-This project simulates an employee-listening program for Meridian Workforce Solutions, a fictional business services and technology organization with approximately 3,600 employees.
+This project simulates an internal employee-listening program for Meridian Workforce Solutions, a fictional workforce and people-analytics consulting organization with approximately 3,600 employees.
 
-Using two synthetic employee survey waves conducted six months apart, the project will demonstrate an end-to-end employee-listening analytics workflow, including examine survey participation, validate employee-experience measures, compare organizational groups, evaluate changes over time, and identify experience dimensions associated with employees' intent to stay.
+The analysis uses synthetic employee and survey data representing two survey waves conducted six months apart. The project demonstrates how an internal people analytics team could assess employee experience, evaluate survey measurement quality, identify organizational differences, and examine factors associated with employees' intent to stay.
 
-The project is designed to demonstrate employee listening, survey research, organizational health analytics, statistical analysis, privacy-conscious reporting, and stakeholder communication.
+All data used in this project are synthetic and were created for demonstration purposes. No real employee or organizational data are used.
 
-All data used in this project will be synthetic. The repository does not contain information from real employees or organizations.
+## Business Question
 
-## Business Questions
+> What aspects of the employee experience at Meridian are most strongly associated with intent to stay, and which organizational groups may need additional support?
 
-The analysis will address the following questions:
+### Objectives
 
-1.  Which employee-experience dimensions are most strongly associated with employees' intent to stay?
-2.  Which departments, job levels, tenure groups, and work arrangements show meaningful differences in employee experience?
-3.  Which organizational health measures improved or declined between the two survey waves?
-4.  Which groups may require additional investigation or organizational support?
-5.  Are survey participation patterns sufficiently representative across organizational groups?
+1. Assess employee experience across six core constructs.
+2. Identify differences across business units and departments.
+3. Examine associations between employee experience and intent to stay.
+4. Develop and evaluate a predictive model of intent to stay.
+5. Determine whether basic employee characteristics provide additional predictive information beyond employee-experience measures.
 
 ## Employee-Experience Dimensions
 
-The survey will measure:
+The survey measures six employee-experience constructs:
 
 - Engagement
-- Manager effectiveness
-- Psychological safety
-- Growth and development
-- Workload sustainability
+- Manager Effectiveness
+- Psychological Safety
+- Growth & Development
+- Workload Sustainability
 - Belonging
-- Intent to stay
 
-Each employee-experience construct will be measured using multiple survey items rather than a single overall satisfaction question.
+The survey also includes **Intent to Stay** as the primary outcome for the predictive analysis.
 
-## Planned Analysis
+Each employee-experience construct is measured using multiple survey items rather than a single overall satisfaction question.
 
-The project will include:
+## Analytical Approach
 
-- Survey population definition
-- Overall and subgroup response-rate analysis
-- Assessment of potential nonresponse patterns
+The project includes:
+
+- Synthetic employee population and survey-data generation
+- Survey population and participation processing
+- Survey-response validation
 - Missing-data assessment
-- Survey item distributions
-- Reliability analysis
+- Likert-scale validation
+- Internal consistency assessment using Cronbach's alpha
+- Factorability diagnostics
 - Exploratory factor analysis
-- Scale construction
-- Employee-experience comparisons
-- Survey-wave trend analysis
-- Confidence intervals and effect sizes
-- Key-driver analysis
+- Composite scale construction
+- Organization- and business-unit-level comparisons
+- Department-level analysis
+- Correlation analysis
+- Multiple linear regression
+- Train/test model evaluation
+- Multicollinearity diagnostics
+- Comparison of employee-experience measures with basic employee characteristics
 - Privacy-conscious organizational reporting
-- Optional voluntary-turnover analysis
+- Report-ready analytical outputs and visualizations
 
-Statistical relationships will be described as associations rather than causal effects.
+Statistical relationships are described as associations rather than causal effects.
+
+## Key Results
+
+The final analytical dataset contains **4,344 usable survey responses**, with **4,071 valid Intent to Stay observations**.
+
+Key findings include:
+
+- Overall employee-experience scores were tightly clustered around the midpoint of the five-point scale.
+- Growth & Development had the highest overall mean score (3.02), while Belonging had the lowest (2.98).
+- Business-unit differences were generally modest.
+- Department-level analysis showed greater variation in selected areas, particularly Growth & Development and Manager Effectiveness.
+- All six employee-experience constructs were positively associated with Intent to Stay.
+- Engagement showed the strongest observed correlation with Intent to Stay (`r = .529`), followed by Manager Effectiveness (`r = .524`) and Belonging (`r = .503`).
+- The final predictive model achieved an R² of **.582** on the held-out test set, with RMSE of **.794** and MAE of **.640**.
+- Adding job level, manager status, work arrangement, and tenure did not significantly improve model fit (`p = .700`).
+
+Because the data are synthetic, these findings describe patterns within the simulated dataset and should not be interpreted as evidence about real employees or organizations.
+
+## Measurement and Reporting Safeguards
+
+The survey measurement framework was evaluated before substantive analysis.
+
+- Cronbach's alpha values across the six constructs ranged from **0.754 to 0.780**.
+- Overall KMO was **0.90**.
+- Bartlett's test of sphericity was significant (`χ² = 29,381.6`, `df = 276`, `p < .001`).
+- Parallel analysis supported a six-factor structure.
+- Exploratory factor analysis supported the intended six-construct measurement structure.
+
+Survey reporting uses a minimum threshold of **10 usable responses** for organizational groups. Groups below the threshold would be suppressed rather than reported.
+
+The threshold is a basic reporting safeguard; real employee-listening programs would require additional protections when examining small demographic or organizational intersections.
 
 ## How to Interpret the Results
 
-This project is a simulation-based portfolio project, not en empirical study of real employees.
+This is a simulation-based portfolio project, not an empirical study of real employees.
 
-The employee population, survey participation patterns, survey responses, organizational differences, and voluntary-turnover outcomes will be synthetically generated for the purpose of demonstrating an employee-listening analytics workflow.
+The employee population, survey responses, organizational characteristics, and analytical findings were synthetically generated for demonstration purposes. The results therefore describe relationships within the simulated data-generating process rather than real-world workforce behavior.
 
-Statistical findings therefore describe patterns within the simulated data-generating process and should not be interpreted as evidence about actual employees, organizations, or workforce behavior.
+The analysis distinguishes between:
 
-The analysis will distinguish between:
-
-- Patterns intentionally represented in the synthetic data-generating process
+- Patterns represented in the synthetic data-generating process
 - Relationships recovered through statistical analysis
 - Findings that remain uncertain or are not supported by the simulated data
 
-Where appropriate, results will be described using language such as "within the synthetic sample" or "the simulated data indicate."
+The project does not claim that synthetic findings generalize to real organizations or establish causal relationships.
 
-The project will not claim that synthetic findings generalize to real organizations or establish causal relationships.
-
-## Reporting and Privacy
-
-Survey results will only be displayed for groups with at least 10 usable responses.
-
-Groups with fewer than 10 responses will be suppressed. Employee identifiers, individual survey responses, individual retention-risk scores, and individual manager rankings will not appear in public-facing datasets, reports, or dashboards.
-
-The Tableau Public dashboard will use aggregated reporting tables rather than unrestricted employee-level survey data.
-
-## Planned Tools
+## Tools
 
 - R
-- SQL
-- Tableau
-- Quarto or R Markdown
+- Excel
 - Git and GitHub
 
 ## Repository Structure
 
-``` text
+```text
 employee-listening-organizational-health/
 ├── README.md
-├── analysis/
+├── assets/
 ├── data/
 │   ├── processed/
-│   └── raw/
+│   ├── raw/
+│   └── reference/
 ├── docs/
-│   ├── project_foundation.md
-│   ├── reporting_privacy_rules.md
-│   └── survey_constructs.md
+├── figures/
+├── outputs/
 ├── reports/
-├── scripts/
-├── sql/
-└── tableau/
-```
-
-Additional folders and files will be added as the project develops.
-
-## Project Documentation
-
-- [Project Foundation](docs/project_foundation.md)
-- [Survey Constructs and Outcomes](docs/survey_constructs.md)
-- [Reporting and Privacy Rules](docs/reporting_privacy_rules.md)
-- [Synthetic Data Generation Assumptions](docs/synthetic_data_generation.md)
-
-## Planned Deliverables
-
-- Synthetic employee population and survey datasets
-- Data dictionary
-- Survey methodology document
-- R analysis notebooks
-- SQL data-preparation and reporting scripts
-- Tableau Public dashboard
-- Two-page executive insights report
-- Dashboard screenshots and key findings
-- Optional voluntary-turnover model
-
-## Intended Audience
-
-This project is designed for:
-
-- People Analytics teams
-- Human Resources leaders
-- Employee Experience teams
-- Organizational development professionals
-- Business and department leaders
-
-## Disclaimer
-
-Meridian Workforce Solutions is a fictional organization created solely for this portfolio project.
-
-All employee records, survey responses, comments, organizational characteristics, and analytical findings will be synthetically generated. No real employee or organizational data are used.
-
-Because the data-generatig process is simulated, analytical findings are intended to demonstrate statistical methods, survey research patterns, data governance, and employee-listening workflows. They should not be interpreted as empirical evidence about real employee populations or organizationa
+└── scripts/
+    ├── 01_generate_population.R
+    ├── 02_generate_survey_population.R
+    ├── 03_generate_survey_responses.R
+    ├── 04_validate_survey_data.R
+    ├── 05_organizational_analysis.R
+    ├── 06_predictive_modeling.R
+    └── 07_reporting_outputs.R
