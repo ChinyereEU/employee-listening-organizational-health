@@ -1,0 +1,30 @@
+"Variable name","Construct","Facet","Survey item","Response scale","Reverse-coded","Include in final survey","Notes"
+"ovl_01","Overall","Overall","Overall, I have a positive experience working at this organization.","agreement_5","No","Yes",
+"eng_01","Engagement","Motivation","I feel motivated to do my best work.","agreement_5","No","Yes",
+"eng_02","Engagement","Energy","I feel energized by the work I do.","agreement_5","No","Yes",
+"eng_03","Engagement","Accomplishment","My work gives me a sense of accomplishment.","agreement_5","No","Yes",
+"eng_04","Engagement","Advocacy","I would recommend this organization as a good place to work.","agreement_5","No","Yes","Review possible overlap with organizational commitment or belonging."
+"mgr_01","Manager effectiveness","Expectations","My manager communicates expectations clearly.","agreement_5","No","Yes",
+"mgr_02","Manager effectiveness","Feedback","My manager provides feedback that helps me improve.","agreement_5","No","Yes",
+"mgr_03","Manager effectiveness","Support","My manager supports me when I encounter challenges.","agreement_5","No","Yes",
+"mgr_04","Manager effectiveness","Fairness","My manager treats team members fairly.","agreement_5","No","Yes",
+"psy_01","Psychological safety","Speaking up","I can raise concerns on my team without fear of negative consequences.","agreement_5","No","Yes",
+"psy_02","Psychological safety","Admitting mistakes","People on my team can acknowledge mistakes openly.","agreement_5","No","Yes",
+"psy_03","Psychological safety","Asking for help","I feel comfortable asking members of my team for help.","agreement_5","No","Yes",
+"psy_04","Psychological safety","Sharing different views","Different perspectives are welcomed on my team.","agreement_5","No","Yes",
+"grwth_01","Growth and development","Skill development","I have opportunities to develop skills that are relevant to my work.","agreement_5","No","Yes",
+"grwth_02","Growth and development","Career clarity","I understand the career opportunities available to me at this organization.","agreement_5","No","Yes","Compare with grwth_04 for possible redundancy."
+"grwth_03","Growth and development","Development support","I receive support for my professional development.","agreement_5","No","Yes",
+"grwth_04","Growth and development","Future opportunities","I can see opportunities for my continued growth at this organization.","agreement_5","No","Yes",
+"wrk_01","Workload sustainability","Manageability","My workload is manageable.","agreement_5","No","Yes",
+"wrk_02","Workload sustainability","Time","I have enough time to complete my work effectively.","agreement_5","No","Yes",
+"wrk_03","Workload sustainability","Staffing/resources","I have access to the resources needed to meet my work responsibilities.","agreement_5","No","Yes","Review whether this loads with workload or a broader enablement/resources factor."
+"wrk_04","Workload sustainability","Sustainable pace","I can maintain my current work pace without becoming overwhelmed.","agreement_5","No","Yes",
+"blg_01","Belonging","Inclusion","I feel included at this organization.","agreement_5","No","Yes",
+"blg_02","Belonging","Respect","I feel respected by the people I work with.","agreement_5","No","Yes",
+"blg_03","Belonging","Authenticity","I feel comfortable being myself at work.","agreement_5","No","Yes",
+"blg_04","Belonging","Connection","I feel connected to the people in this organization.","agreement_5","No","Yes",
+"its_01","Intent to stay","Expected continued employment","I expect to still be working at this organization one year from now.","agreement_5","No","Yes","Timeframe intentionally fixed at one year"
+"its_02","Intent to stay","Preference to remain","I would prefer to continue working at this organization rather than seek employment elsewhere.","agreement_5","No","Yes",
+"comment_01","Open-ended","Open-ended","What is one thing this organization could do to improve your experience at work?","open_text","N/A","Yes",
+"Total",,,,,,"28",
