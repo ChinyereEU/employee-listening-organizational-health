@@ -1,0 +1,5 @@
+metric,value
+Training R-squared,0.5771359812036992
+Testing R-squared,0.5818716669193031
+Testing RMSE,0.7941868776154098
+Testing MAE,0.6401711932641564
